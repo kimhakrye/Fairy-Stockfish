@@ -73,7 +73,7 @@ namespace {
 
 
   // Variant bonuses
-  constexpr int HordeConnected[2][RANK_NB] = {{   5, 10,  20, 55, 55, 100, 80 },
+  constexpr int HordeConnected[2][RANK_NB] = {{   5, 10,  20, 60, 50, 105, 80 },
                                               { -10,  5, -10,  5, 25,  40, 30 }};
 
   #undef S
