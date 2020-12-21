@@ -502,7 +502,7 @@ namespace {
                                 PieceValue[EG][Pt] - PieceValue[EG][pos.unpromoted_piece_on(s)]) / 4;
         else if (pos.captures_to_hand() && pos.unpromoted_piece_on(s))
             score += make_score(PieceValue[MG][Pt] - PieceValue[MG][pos.unpromoted_piece_on(s)],
-                                PieceValue[EG][Pt] - PieceValue[EG][pos.unpromoted_piece_on(s)]) / 8;
+                                PieceValue[EG][Pt] - PieceValue[EG][pos.unpromoted_piece_on(s)]) / 6;
 
         // Penalty if the piece is far from the kings in drop variants
         if ((pos.captures_to_hand() || pos.two_boards()) && pos.count<KING>(Them) && pos.count<KING>(Us))
