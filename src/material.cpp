@@ -115,6 +115,15 @@ namespace {
         bonus += pieceCount[Us][pt1] * v;
     }
 
+    if (pos.count<PAWN>(Us) == pos.count<ALL_PIECES>(Us))
+    {
+        bonus += (  QuadraticOurs[PAWN][PAWN] * pieceCount[Us][PAWN] / 2
+                  - QuadraticTheirs[KNIGHT][PAWN] * pieceCount[Them][KNIGHT]
+                  - QuadraticTheirs[BISHOP][PAWN] * pieceCount[Them][BISHOP]
+                  - QuadraticTheirs[QUEEN][PAWN] * pieceCount[Them][ROOK]
+                  - QuadraticTheirs[QUEEN][PAWN] * pieceCount[Them][QUEEN]) * pieceCount[Us][PAWN];
+    }
+
     return bonus * (1 + pos.must_capture());
   }
 
