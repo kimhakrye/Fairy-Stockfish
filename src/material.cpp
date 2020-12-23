@@ -116,7 +116,7 @@ namespace {
     }
 
     if (pos.must_capture())
-        bonus += bonus + 2 * QuadraticOurs[KNIGHT][PAWN] * pieceCount[Us][KNIGHT] * pieceCount[Us][PAWN];
+        bonus += 3 * QuadraticOurs[KNIGHT][PAWN] * pieceCount[Us][KNIGHT] * pieceCount[Us][PAWN];
     else if (pos.check_counting())
         bonus -= 2 * QuadraticOurs[PAWN][PAWN] * pieceCount[Us][PAWN] * pieceCount[Us][PAWN];
 
