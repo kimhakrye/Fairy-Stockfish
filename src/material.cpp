@@ -119,6 +119,8 @@ namespace {
         bonus += 3 * QuadraticOurs[KNIGHT][PAWN] * pieceCount[Us][KNIGHT] * pieceCount[Us][PAWN];
     else if (pos.check_counting())
         bonus -= 2 * QuadraticOurs[PAWN][PAWN] * pieceCount[Us][PAWN] * pieceCount[Us][PAWN];
+    else if (pos.count<PAWN>(Us) == pos.count<ALL_PIECES>(Us))
+        bonus += QuadraticOurs[PAWN][PAWN] * pieceCount[Us][PAWN] * pieceCount[Us][PAWN] / 4;
 
     return bonus;
   }
