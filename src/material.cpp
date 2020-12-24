@@ -109,7 +109,7 @@ namespace {
         int v = QuadraticOurs[pt1][pt1] * pieceCount[Us][pt1];
 
         for (int pt2 = NO_PIECE_TYPE; pt2 < pt1; ++pt2)
-            v +=  QuadraticOurs[pt1][pt2] * pieceCount[Us][pt2]
+            v +=  QuadraticOurs[pt1][pt2] * std::min(pieceCount[Us][pt2], 10)
                 + QuadraticTheirs[pt1][pt2] * pieceCount[Them][pt2];
 
         bonus += pieceCount[Us][pt1] * v;
